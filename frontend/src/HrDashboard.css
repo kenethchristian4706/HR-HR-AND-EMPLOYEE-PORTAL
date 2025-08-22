@@ -1,0 +1,305 @@
+
+
+
+/* Modern HR Dashboard CSS */
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap');
+
+body {
+  font-family: 'Inter', 'Open Sans', Arial, Helvetica, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+}
+
+.hr-dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+.hr-sidebar {
+  width: 250px;
+  background: #1e1e2f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 10;
+  box-shadow: 2px 0 12px rgba(30,30,47,0.10);
+}
+
+.hr-sidebar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  letter-spacing: 1px;
+}
+
+.hr-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0.5rem;
+}
+
+.hr-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.hr-menu-item:hover {
+  background: #282846;
+}
+.hr-menu-item.active {
+  background: #3a3a5c;
+  color: #a3a3ff;
+}
+.hr-menu-icon {
+  font-size: 1.2rem;
+}
+.hr-menu-label {
+  font-size: 1rem;
+}
+.hr-sidebar-spacer {
+  flex: 1;
+}
+.hr-logout {
+  margin-top: 1rem;
+  background: #2c2c44;
+  color: #ff4d4f;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.hr-logout:hover {
+  background: #3a3a5c;
+  color: #fff;
+}
+
+.hr-dashboard-main {
+  margin-left: 250px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 0 2rem;
+}
+.hr-header-left {
+  flex: 1;
+}
+.hr-welcome-card {
+  background: linear-gradient(90deg, #6a5af9 0%, #5f6ef7 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 4px 24px rgba(90,90,150,0.10);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: inline-block;
+}
+.hr-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  position: relative;
+}
+.hr-header-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.hr-header-dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  min-width: 140px;
+  z-index: 100;
+}
+.hr-header-avatar:active + .hr-header-dropdown,
+.hr-header-avatar:focus + .hr-header-dropdown {
+  display: block;
+}
+.hr-header-dropdown-item {
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+.hr-header-dropdown-item:last-child {
+  border-bottom: none;
+}
+.hr-header-dropdown-item:hover {
+  background: #f5f6fa;
+}
+
+.hr-quick-actions {
+  display: flex;
+  gap: 1.75rem;
+  padding: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.hr-quick-action-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(15,23,42,0.06);
+  padding: 1.6rem 2.4rem;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: box-shadow 0.22s, background 0.18s, transform 0.12s;
+}
+.hr-quick-action-card:hover {
+  background: #f8fafc;
+  box-shadow: 0 10px 40px rgba(15,23,42,0.08);
+  transform: translateY(-4px);
+}
+.hr-quick-action-icon {
+  font-size: 1.5rem;
+  color: #6a5af9;
+}
+.hr-quick-action-label {
+  font-size: 1rem;
+}
+
+
+.hr-org-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.hr-org-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  transition: box-shadow 0.22s, background 0.18s, transform 0.12s;
+}
+.hr-org-card:hover {
+  background: #f8fafc;
+  box-shadow: 0 18px 64px rgba(2,6,23,0.07);
+  transform: translateY(-6px);
+}
+.hr-org-label {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.hr-org-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #23272f;
+  margin-bottom: 0.5rem;
+}
+
+.hr-main-content {
+  flex: 1;
+  padding: 2.5rem;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Utility helpers for consistent spacing & centering */
+.center-xy { display: flex; align-items: center; justify-content: center; }
+.card-spacious { padding: 28px; border-radius: 14px; box-shadow: 0 10px 30px rgba(2,6,23,0.06); background: #fff; }
+
+/* Make quick children inside main content centered by default */
+.hr-main-content > .card-spacious, .hr-main-content > .hr-content { margin-left: auto; margin-right: auto; max-width: 1200px; width: 100%; }
+
+/* Form styles for HR pages */
+.hr-content { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 6px 20px rgba(15,23,42,0.04); }
+.hr-form { display: flex; flex-direction: column; gap: 12px; }
+.hr-card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #111827; }
+.hr-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hr-field { display: flex; flex-direction: column; margin-bottom: 8px; }
+.hr-field label { font-size: 13px; color: #374151; margin-bottom: 6px; }
+.hr-field input { padding: 12px 14px; border-radius: 10px; border: 1px solid #e6e9ef; font-size: 15px; background: #fff; transition: box-shadow 180ms ease, border-color 180ms ease; }
+.hr-field input:focus { outline: none; box-shadow: 0 6px 18px rgba(59,130,246,0.12); border-color: rgba(37,99,235,0.9); }
+.hr-card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 10px 30px rgba(2,6,23,0.06); }
+
+.hr-actions { display: flex; gap: 8px; margin-top: 8px; }
+.btn-primary { background: #2563eb; color: white; padding: 10px 14px; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; transition: background 200ms ease, transform 140ms ease; }
+.btn-primary:hover { background: #1f4fd6; transform: translateY(-2px); }
+.btn-secondary { background: #f3f4f6; color: #111827; padding: 10px 14px; border-radius: 10px; border: 1px solid #e6e9ef; cursor: pointer; transition: background 200ms ease, transform 140ms ease; }
+.btn-secondary:hover { background: #e9ecef; transform: translateY(-2px); }
+
+@media (max-width: 900px) {
+  .hr-form-row { grid-template-columns: 1fr; }
+  .hr-content { padding: 16px; }
+  .hr-card-title { text-align: center; }
+}
+.hr-error { margin-top: 12px; color: #dc2626; }
+
+.btn-secondary { background: #fff; color: #374151; padding: 8px 12px; border-radius: 8px; border: 1px solid #e6e9ef; cursor: pointer; }
+.btn-secondary:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.04); transform: translateY(-1px); }
+
+@media (max-width: 1100px) {
+  .hr-dashboard-main {
+    padding: 0.5rem;
+  }
+  .hr-header, .hr-quick-actions, .hr-org-overview {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .hr-sidebar {
+    width: 80px;
+  }
+  .hr-dashboard-main {
+    margin-left: 80px;
+  }
+  .hr-sidebar-title, .hr-menu-label {
+    display: none;
+  }
+  .hr-header, .hr-quick-actions, .hr-org-overview {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hr-header, .hr-quick-actions, .hr-org-overview {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.3rem;
+  }
+  .hr-org-overview {
+    grid-template-columns: 1fr;
+  }
+}

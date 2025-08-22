@@ -1,0 +1,13 @@
+{
+  "name": "hr-mailer",
+  "version": "1.0.0",
+  "description": "Simple Nodemailer service to send welcome emails",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.4"
+  }
+}
